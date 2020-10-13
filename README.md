@@ -21,7 +21,6 @@ gitをインストールしてください。
 ```bash
 $ git clone https://github.com/medamawa/nada-sc.git
 $ cd nada-sc
-$ make create-project # Install the 6.* Laravel project
 $ make init
 ```
 
