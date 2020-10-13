@@ -22,11 +22,12 @@ gitをインストールしてください。
 $ git clone https://github.com/medamawa/nada-sc.git
 $ cd nada-sc
 $ make create-project # Install the 6.* Laravel project
+$ make init
 ```
 
-laravelのバージョンは6系を指定しています。（Makefileで変更可能）
+※ laravelのバージョンは6系を指定しています。（Makefileで変更可能）
 
-ポート番号は8000番です。（docker-composer.ymlで変更可能）
+※ ポート番号は8000番です。（docker-composer.ymlで変更可能）
 
 http://127.0.0.1:8000
 
