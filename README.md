@@ -34,6 +34,10 @@ http://127.0.0.1:8000
 
 laravelのプロジェクトファイルはbackendフォルダです。
 
+## コマンドについて
+
+Makefileを開いてもらえればだいたいわかると思います。
+
 ## 参考
 
 [Qiita参考記事](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4)
