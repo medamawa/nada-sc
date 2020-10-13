@@ -4,21 +4,19 @@
 
 使用方法です。
 
-## セットアップ
+## 必要なもの
 
-### 必要なもの
-
-#### git
+### git
 
 gitをインストールしてください。
 
-#### docker
+### docker
 
 お使いの環境にあったdockerをインストールしてください。
 
 [dockerのインストール](https://www.docker.com/get-started)
 
-### ファイルのダウンロード
+## 実行
 
 ```bash
 $ git clone https://github.com/medamawa/nada-sc.git
