@@ -1,61 +1,64 @@
-# docker-laravel 🐳
+# nada-sc 🌏
 
-![License](https://img.shields.io/github/license/ucan-lab/docker-laravel?color=f05340)
-![Stars](https://img.shields.io/github/stars/ucan-lab/docker-laravel?color=f05340)
-![Issues](https://img.shields.io/github/issues/ucan-lab/docker-laravel?color=f05340)
-![Forks](https://img.shields.io/github/forks/ucan-lab/docker-laravel?color=f05340)
+## はじめに
 
-## Introduction
+## セットアップ
 
-Build a simple laravel development environment with docker-compose.
+### 必要なもの
 
-## Usage
+#### git
 
-```bash
-$ git clone git@github.com:ucan-lab/docker-laravel.git
-$ cd docker-laravel
-$ make create-project # Install the latest Laravel project
-$ make install-recommend-packages # Not required
-```
+gitをインストールしてください。
 
-http://127.0.0.1
+#### docker
 
-Read this [Makefile](https://github.com/ucan-lab/docker-laravel/blob/master/Makefile).
+お使いの環境にあったdockerをインストールしてください。
 
-## Tips
+[dockerのインストール](https://www.docker.com/get-started)
 
-Read this [Wiki](https://github.com/ucan-lab/docker-laravel/wiki).
-
-## Container structure
+### ファイルのダウンロード
 
 ```bash
-├── app
-├── web
-└── db
+$ git clone https://github.com/medamawa/nada-sc.git
+$ cd nada-sc
+$ make create-project # Install the 6.* Laravel project
 ```
 
-### app container
+laravelのバージョンは6系を指定しています。（Makefileで変更可能）
 
-- Base image
-  - [php](https://hub.docker.com/_/php):7.4-fpm-buster
-  - [composer](https://hub.docker.com/_/composer):1.10
+ポート番号は8000番です。（docker-composer.ymlで変更可能）
 
-### web container
+http://127.0.0.1:8000
 
-- Base image
-  - [nginx](https://hub.docker.com/_/nginx):1.18-alpine
-  - [node](https://hub.docker.com/_/node):14.2-alpine
+## 参考
 
-### db container
+[Qiita参考記事](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4)
 
-- Base image
-  - [mysql](https://hub.docker.com/_/mysql):8.0
 
-#### Persistent MySQL Storage
+## License
 
-By default, the [named volume](https://docs.docker.com/compose/compose-file/#volumes) is mounted, so MySQL data remains even if the container is destroyed.
-If you want to delete MySQL data intentionally, execute the following command.
-
-```bash
-$ docker-compose down -v && docker-compose up
 ```
+The MIT License (MIT)
+
+Copyright (c) 2020 ucan-lab/docker-laravel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+[docker-laravel](https://github.com/ucan-lab/docker-laravel/)
