@@ -31,6 +31,10 @@ $ make init
 
 http://127.0.0.1:8000
 
+## ファイル構成について
+
+laravelのプロジェクトファイルはbackendフォルダです。
+
 ## 参考
 
 [Qiita参考記事](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4)
