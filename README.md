@@ -18,6 +18,8 @@ gitをインストールしてください。
 
 ## 実行
 
+以下のコマンドで（masterの安定版）を実行することができます。
+
 ```bash
 $ git clone https://github.com/medamawa/nada-sc.git
 $ cd nada-sc
@@ -29,6 +31,15 @@ $ make init
 ※ ポート番号は8000番です。（docker-composer.ymlで変更可能）
 
 http://127.0.0.1:8000
+
+## 開発用
+
+developブランチを使用してください。
+
+```bash
+// もちろんプロジェクトファイル直下で実行してください。
+$ git checkout -b develop origin/develop
+```
 
 ## ファイル構成について
 
