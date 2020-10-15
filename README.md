@@ -18,7 +18,11 @@ gitをインストールしてください。
 
 ## 実行
 
-以下のコマンドで（masterの安定版）を実行することができます。
+※ 開発をする際は下記の方法でdevelopブランチを使用してください。
+
+### dockerを走らせる
+
+以下のコマンドでを実行することができます。
 
 ```bash
 $ git clone https://github.com/medamawa/nada-sc.git
@@ -32,19 +36,35 @@ $ make init
 
 http://127.0.0.1:8000
 
+### DBのマイグレート
+
+初めての場合は以下のコマンドで初期化してからマイグレーションを行います。
+
+```bash
+$ make fresh
+```
+
+２回目以降は以下のコマンドで追加マイグレーションを行います。
+
+```bash
+$ make migrate
+```
+
+
 ※ DBのポート番号は3306番です。（docker-composer.ymlで変更可能）
 
-![Imgur](https://i.imgur.com/XvmrPvv.png)
-（passwordは secret です）
+※ 画像はMySQL Workbenchで開く場合の設定です。
 
-画像はMySQL Workbenchで開く場合の設定です。
+（passwordは secret です）
+![Imgur](https://i.imgur.com/XvmrPvv.png)
 
 ## 開発用
 
-developブランチを使用してください。
+上記の操作（「実行」参照）をdevelopブランチで行ってください。
 
 ```bash
 // もちろんプロジェクトファイル直下で実行してください。
+
 $ git checkout -b develop origin/develop
 ```
 
