@@ -32,6 +32,13 @@ $ make init
 
 http://127.0.0.1:8000
 
+※ DBのポート番号は3306番です。（docker-composer.ymlで変更可能）
+
+![Imgur](https://i.imgur.com/XvmrPvv.png)
+（passwordは secret です）
+
+画像はMySQL Workbenchで開く場合の設定です。
+
 ## 開発用
 
 developブランチを使用してください。
