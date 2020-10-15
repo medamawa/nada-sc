@@ -58,7 +58,7 @@ $ make migrate
 （passwordは secret です）
 ![Imgur](https://i.imgur.com/XvmrPvv.png)
 
-## 開発用
+### 開発用
 
 上記の操作（「実行」参照）をdevelopブランチで行ってください。
 
@@ -68,11 +68,13 @@ $ make migrate
 $ git checkout -b develop origin/develop
 ```
 
-## ファイル構成について
+## その他
+
+### ファイル構成について
 
 laravelのプロジェクトファイルはbackendフォルダです。
 
-## コマンドについて
+### コマンドについて
 
 Makefileを開いてもらえればだいたいわかると思います。
 
