@@ -63,6 +63,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      * 
      * roleの追加
+     * passwordのハッシュ化を解除
      *
      * @param  array  $data
      * @return \App\User
