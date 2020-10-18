@@ -38,6 +38,14 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "exclude-from-classmap": [
+            "vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\AuthenticatesUsers.php",
+            "vendor\\laravel\\framework\\src\\Illuminate\\Auth\\EloquentUserProvider.php"
+        ],
+        "files": [
+            "app\\Vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\AuthenticatesUsers.php",
+            "app\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\EloquentUserProvider.php"
         ]
     },
     "autoload-dev": {
