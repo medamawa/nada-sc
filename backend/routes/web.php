@@ -60,7 +60,10 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 
-    Route::get('/draft', 'Article\DraftsController@index')->name('draft.index');
-    Route::get('/draft/create', 'Article\DraftsController@create')->name('draft.create');
-    Route::post('/draft', 'Article\DraftsController@store')->name('draft.store');
+    // draft(下書き)
+    Route::group(['prefix' => 'draft'], function () {
+        Route::get('/', 'Article\DraftsController@index')->name('draft.index');
+        Route::get('/create', 'Article\DraftsController@create')->name('draft.create');
+        Route::post('', 'Article\DraftsController@store')->name('draft.store');
+    });
 });
