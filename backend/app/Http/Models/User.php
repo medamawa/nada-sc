@@ -15,4 +15,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'role', 'password'
     ];
+
+    public function getName(String $user_id)
+    {
+        return $this->where('id', $user_id)->value('name');
+    }
 }

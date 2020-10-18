@@ -25,8 +25,8 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
 
 
 // ミドルウェアで認証済みでない(ログインしていない)ユーザーを弾く
@@ -59,4 +59,8 @@ Route::group(['middleware' => 'auth'], function () {
             return response()->json(['role' => 'general']);
         });
     });
+
+    Route::get('/draft', 'Article\DraftsController@index')->name('draft.index');
+    Route::get('/draft/create', 'Article\DraftsController@create')->name('draft.create');
+    Route::post('/draft', 'Article\DraftsController@store')->name('draft.store');
 });
