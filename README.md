@@ -18,7 +18,7 @@ gitをインストールしてください。
 
 ## 実行
 
-※ 開発をする際は下記の方法でdevelopブランチを使用してください。
+※ 安定版を動かす際は後述の方法でmasterブランチに切り替えてください。
 
 ### dockerを走らせる
 
@@ -27,6 +27,7 @@ gitをインストールしてください。
 ```bash
 $ git clone https://github.com/medamawa/nada-sc.git
 $ cd nada-sc
+$ git checkout -b develop origin/develop          // developブランチを作成&クローン&チェックアウト
 $ make init
 ```
 
@@ -58,14 +59,14 @@ $ make migrate
 （passwordは secret です）
 ![Imgur](https://i.imgur.com/XvmrPvv.png)
 
-### 開発用
+### 安定版確認
 
 上記の操作（「実行」参照）をdevelopブランチで行ってください。
 
 ```bash
-// もちろんプロジェクトファイル直下で実行してください。
-
-$ git checkout -b develop origin/develop
+$ cd nada-sc
+$ git checkout master
+$ make init
 ```
 
 ## その他
