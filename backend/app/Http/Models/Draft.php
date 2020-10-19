@@ -45,4 +45,9 @@ class Draft extends Model
     {
         return $this->where('user_id', $user_id)->orderBy('updated_at', 'desc')->get();
     }
+
+    public function getDraftWithId(String $id)
+    {
+        return $this->where('id', $id)->get();
+    }
 }

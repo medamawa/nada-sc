@@ -48,9 +48,12 @@ class DraftsController extends Controller
         return redirect(route('draft.index'));
     }
 
-    public function show($id)
+    public function show($id, Draft $draft)
     {
-        //
+        // idから下書きを取得
+        $drafts = $draft->getDraftWithId($id);
+
+        return view('draft.show', ['drafts' => $drafts]);
     }
 }
 
