@@ -65,5 +65,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', 'Article\DraftsController@index')->name('draft.index');
         Route::get('/create', 'Article\DraftsController@create')->name('draft.create');
         Route::post('', 'Article\DraftsController@store')->name('draft.store');
+        Route::get('/{id}', 'Article\DraftsController@show')->name('draft.show');
+        Route::get('/{id}/edit', 'Article\DraftsController@edit')->name('draft.edit');
+        Route::post('/{id}', 'Article\DraftsController@update')->name('draft.update');
     });
 });
