@@ -32,13 +32,25 @@ class Draft extends Model
     // linksはまだ対応していない
     public function post(String $user_id, String $name, String $email, String $title, String $body)
     {
-        // DBへ新しい投稿を登録
+        // DBへ新しい下書きを登録
         $this->user_id = $user_id;
         $this->name = $name;
         $this->email = $email;
         $this->title = $title;
         $this->body = $body;
         $this->save();
+    }
+
+    // linksはまだ対応していない
+    public function edit(String $id, String $name, String $email, String $title, String $body)
+    {
+        // DBへ下書きの編集を適用
+        $draft = Draft::find($id);
+        $draft->name = $name;
+        $draft->email = $email;
+        $draft->title = $title;
+        $draft->body = $body;
+        $draft->save();
     }
 
     public function getDrafts(String $user_id)
