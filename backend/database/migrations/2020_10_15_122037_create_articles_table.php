@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
             $table->string('title')->comment('タイトル');
             $table->string('body')->comment('本文');
             $table->json('links')->nullable()->comment('参考リンク');
-            $table->bigInteger('view')->comment('ビューカウント');
+            $table->bigInteger('view')->default(0)->comment('ビューカウント');
             $table->softDeletes();
             $table->timestamps();
 
