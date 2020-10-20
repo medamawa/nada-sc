@@ -16,6 +16,7 @@ class CreateArticleActivationsTable extends Migration
         Schema::create('article_activations', function (Blueprint $table) {
             $table->uuid('id')->primary()->comment('記事ID');
             $table->string('draft_id')->comment('下書きID');
+            $table->boolean('isSubmitted')->default(true)->comment('提出済みフラグ');
             $table->boolean('isActivated')->default(false)->comment('アクティベーション済みフラグ');
             $table->softDeletes();
             $table->timestamps();

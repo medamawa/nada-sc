@@ -36,12 +36,19 @@ class ArticleActivation extends Model
         $this->save();
     }
 
-    public function isOk(String $draft_id)
+    public function isSubmitted(String $draft_id)
     {
-        // draft_idが既に登録されているかどうかチェック
         $activation = $this->where('draft_id', $draft_id)->first();
         
+        // draft_idが既に登録されているかどうかチェック
+        // draft_idが既に登録されていればfalseを返す
         if ($activation) {
+            return false;
+        }
+
+        // 「isSubmitted == true」になっているかどうかチェック
+        // 「isSubmitted == true」ならfalseを返す
+        if ($activation->isSubmitted) {
             return false;
         }
 
