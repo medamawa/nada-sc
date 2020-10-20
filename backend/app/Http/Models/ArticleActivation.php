@@ -35,4 +35,16 @@ class ArticleActivation extends Model
         $this->draft_id = $draft_id;
         $this->save();
     }
+
+    public function isOk(String $draft_id)
+    {
+        // draft_idが既に登録されているかどうかチェック
+        $activation = $this->where('draft_id', $draft_id)->first();
+        
+        if ($activation) {
+            return false;
+        }
+
+        return true;
+    }
 }

@@ -84,6 +84,11 @@ class DraftsController extends Controller
 
     public function submit($id, ArticleActivation $articleActivation)
     {
+        // 既にアクティベーション済みの下書きを弾く
+        if (!$articleActivation->isOk($id)) {
+            return response()->json(['error' => 'already existed.']);
+        }
+        
         // 下書きをアクティベーションテーブルに登録
         // 管理者の承認を待つ
         $articleActivation->submit($id);
