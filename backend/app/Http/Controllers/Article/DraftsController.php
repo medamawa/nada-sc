@@ -80,5 +80,22 @@ class DraftsController extends Controller
 
         return redirect(route('draft.index'));
     }
+
+    public function submit(Request $request, $id, Draft $draft)
+    {
+        $request->validate([
+            'name' => ['required', 'string'],
+            'email' => ['required', 'string', 'email'],
+            'title' => ['required', 'string', 'max:50'],
+            'body' => ['required', 'string'],
+            'links' => [],
+        ]);
+
+        // DBに登録
+        // linksの対応はまだである
+        $draft->edit($id, $request->name, $request->email, $request->title, $request->body);
+
+        return redirect(route('draft.index'));
+    }
 }
 
