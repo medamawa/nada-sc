@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Models\User;
 use App\Http\Models\Draft;
+use App\Http\Models\ArticleActivation;
 
 class DraftsController extends Controller
 {
@@ -81,19 +82,11 @@ class DraftsController extends Controller
         return redirect(route('draft.index'));
     }
 
-    public function submit(Request $request, $id, Draft $draft)
+    public function submit($id, ArticleActivation $articleActivation)
     {
-        $request->validate([
-            'name' => ['required', 'string'],
-            'email' => ['required', 'string', 'email'],
-            'title' => ['required', 'string', 'max:50'],
-            'body' => ['required', 'string'],
-            'links' => [],
-        ]);
-
-        // DBに登録
-        // linksの対応はまだである
-        $draft->edit($id, $request->name, $request->email, $request->title, $request->body);
+        // 下書きをアクティベーションテーブルに登録
+        // 管理者の承認を待つ
+        $articleActivation->submit($id);
 
         return redirect(route('draft.index'));
     }
