@@ -31,6 +31,16 @@ $ git checkout -b develop origin/develop          // developブランチを作�
 $ make init
 ```
 
+※ （下画像の様な）パーミッションエラーが発生した場合
+
+![Imgur](https://imgur.com/BdQ0XxE)
+
+もう一度以下のコマンドを実行してください。
+
+```bash
+$ make init
+```
+
 ※ laravelのバージョンは6系を指定しています。（Makefileで変更可能）
 
 ※ ポート番号は8000番です。（docker-composer.ymlで変更可能）
