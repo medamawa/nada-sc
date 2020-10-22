@@ -59,6 +59,23 @@ $ make migrate
 （passwordは secret です）
 ![Imgur](https://i.imgur.com/XvmrPvv.png)
 
+### 認証系に修正が入った場合
+
+プルをした後、以下のコマンドを実行してください。
+
+```bash
+// $ cd nada-sc
+// $ git pull origin develop
+
+// appのコンソールに移動
+$ make app
+
+# composer auto-dumpload
+
+// appのコンソールを出る
+# exit
+```
+
 ### 安定版確認
 
 上記の操作（「実行」参照）をdevelopブランチで行ってください。
