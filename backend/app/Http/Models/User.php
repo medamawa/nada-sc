@@ -13,7 +13,7 @@ class User extends Authenticatable
     use SoftDeletes;
 
     protected $fillable = [
-        'name', 'email', 'role', 'password'
+        'user_name', 'name', 'email', 'role', 'password'
     ];
 
     public function getName(String $user_id)

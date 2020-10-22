@@ -146,7 +146,7 @@ trait AuthenticatesUsers
     {
         // 認証をemailではなくnameを使用するように変更
         // return 'email';
-        return 'name';
+        return 'user_name';
     }
 
     /**

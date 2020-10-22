@@ -13,7 +13,8 @@ class UsersTableSeederToAddAdminAccount extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'me-admin',
+            'user_name' => 'me-admin',
+            'name' => '管理者',
             'email' => 'dotakoyaki@gmail.com',
             'role' => 1,
             'password' => 'et-tu-brute?',
