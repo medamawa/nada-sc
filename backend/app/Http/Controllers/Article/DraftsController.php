@@ -15,7 +15,7 @@ class DraftsController extends Controller
         // ユーザーIDを取得
         $user_id = auth()->user()->id;
 
-        // ユーザー名を取得
+        // アカウント名を取得
         $name = $user->getName($user_id);
 
         // 下書き一覧を取得
@@ -24,9 +24,16 @@ class DraftsController extends Controller
         return view('draft.index', ['name' => $name, 'drafts' => $drafts]);
     }
 
-    public function create()
+    public function create(User $user)
     {
-        return view('draft.create');
+        // ユーザーIDを取得
+        $user_id = auth()->user()->id;
+
+        // アカウント名、メールアドレスを取得
+        $name = $user->getName($user_id);
+        $email = $user->getEmail($user_id);
+        
+        return view('draft.create', ['name' => $name, 'email' => $email]);
     }
 
     public function store(Request $request, Draft $draft)

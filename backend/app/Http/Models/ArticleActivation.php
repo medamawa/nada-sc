@@ -41,9 +41,9 @@ class ArticleActivation extends Model
         $activation = $this->where('draft_id', $draft_id)->first();
         
         // draft_idが既に登録されているかどうかチェック
-        // draft_idが既に登録されていればfalseを返す
-        if ($activation) {
-            return false;
+        // draft_idが登録されていなければtrueを返す
+        if (!$activation) {
+            return true;
         }
 
         // 「isSubmitted == true」になっているかどうかチェック

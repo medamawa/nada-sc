@@ -20,4 +20,9 @@ class User extends Authenticatable
     {
         return $this->where('id', $user_id)->value('name');
     }
+
+    public function getEmail(String $user_id)
+    {
+        return $this->where('id', $user_id)->value('email');
+    }
 }

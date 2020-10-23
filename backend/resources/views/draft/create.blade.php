@@ -3,13 +3,13 @@
     <form method="POST" action="{{ route('draft.store') }}">
         @csrf
         [name]
-        <input type="text" name="name">
+        <input type="text" name="name" value="{{ $name }}">
         @if ($errors->has('name'))
         {{$errors->first('name')}}
         @endif
         <br>
         [email]
-        <input type="email" name="email">
+        <input type="email" name="email" value="{{ $email }}">
         @if ($errors->has('email'))
         {{$errors->first('email')}}
         @endif
