@@ -66,6 +66,17 @@ class DraftsController extends Controller
 
     public function edit($id, Draft $draft)
     {
+        // 下書きが存在するかどうかチェック
+        if (!$draft->checkDraft($id)) {
+            return response()->json(['error' => 'this draft is not exist.']);
+        }
+
+        // 下書きがログインしているユーザーのものかチェック
+        $user_id = auth()->user()->id;
+        if (!$draft->checkUser($user_id)) {
+            return response()->json(['error' => 'this draft is not yours.']);
+        }
+        
         // idから編集する下書きを取得
         $drafts = $draft->getDraftWithId($id);
 
@@ -86,7 +97,7 @@ class DraftsController extends Controller
         // linksの対応はまだである
         $draft->edit($id, $request->name, $request->email, $request->title, $request->body);
 
-        return redirect(route('draft.index'));
+        return redirect(route('draft.show', ['id' => $id]));
     }
 
     public function submit($id, ArticleActivation $articleActivation)

@@ -62,4 +62,14 @@ class Draft extends Model
     {
         return $this->where('id', $id)->get();
     }
+
+    public function checkDraft(String $id)
+    {
+        return $this->where('id', $id)->first();
+    }
+
+    public function checkUser(String $user_id)
+    {
+        return $this->where('user_id', $user_id)->first();
+    }
 }

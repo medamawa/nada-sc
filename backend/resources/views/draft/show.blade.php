@@ -6,6 +6,7 @@
             <p>記事ID：<small>{{ $draft->id }}</small></p>
             <article>{{!! $draft->body !!}}</article>
             <br>
+            <a href="{{ route('draft.edit', ['id' => $draft->id]) }}">編集</a>
             <form method="POST" action="{{ route('draft.submit', ['id' => $draft->id]) }}">
                 @csrf
                 <input type="submit" value="チェックを依頼をする">
