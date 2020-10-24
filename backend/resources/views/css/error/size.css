@@ -1,0 +1,5 @@
+/* エラーメッセージ画面のサイズの設定 */
+
+#error-message-wrapper {
+    background-color: aqua;
+}

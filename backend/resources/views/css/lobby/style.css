@@ -1,0 +1,67 @@
+/* ロビーの案内の装飾 */
+
+#guide-wrapper {
+    margin: 15px;
+    color: #5d627b;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    text-align: center;
+}
+
+#guide-wrapper h1 img {
+    width: 70%;
+}
+
+#guide-wrapper nav ul {
+    display: flex;
+    width: 80%;
+    text-align: center;
+    margin: 0px auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    #guide-wrapper nav ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #guide-wrapper nav ul {
+        display: block;
+    }
+}
+
+#guide-wrapper nav ul li {
+    background: #5bbee5;
+    border-radius: 6px;
+    transition: .2s ease;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    width: 130px;
+    text-align: center;
+    margin: 10px auto 0px;
+    padding: 10px;
+}
+
+#guide-wrapper nav ul li:hover {
+    background: #a3daf0;
+}
+
+#guide-wrapper nav ul li a {
+    display: block;
+    width: 100%;
+}
+
+#guide-wrapper nav ul li a:hover:after {
+    background-color: yellow;
+    width: 100%;
+    left: 0;
+    border-radius: 5px;
+}
+
+#guide-wrapper nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}

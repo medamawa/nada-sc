@@ -1,0 +1,67 @@
+/* 左バー */
+
+#left-bar {
+    padding: 0px 10px 5px;
+}
+
+#left-bar ul {
+    margin: 5px 0px 10px;
+    padding: 0px 0px;
+    list-style-type: none;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+#left-bar li {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#left-bar li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #5d627b;
+    border-bottom: 1px solid #dddddb;
+}
+
+#left-bar .bar-title {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #5bbee5;
+    border-bottom: none;
+}
+
+#left-bar li:last-child a {
+    border-bottom: none;
+}
+
+#left-bar li a.active {
+    color: #ffffff;
+    background-color: #224473;
+    border-bottom: 1px solid #224473;
+}
+
+#left-bar li a:hover:not(.active) {
+    color: #5d627b;
+    background-color: #cdebf7;
+    border-bottom: 1px solid #dddddb;
+}
+
+#left-bar li:last-child a:hover:not(.active) {
+    border-bottom: none;
+}
+
+#left-bar li:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#left-bar li:last-child,
+#left-bar li:last-child a.active,
+#left-bar li:last-child a:hover {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}

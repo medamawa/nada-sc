@@ -1,0 +1,26 @@
+/* 中央に配置する画面の設定のテンプレート */
+
+#contents-wrapper {
+    margin: auto;
+    /* 大枠の設定(css/global/style内)を上書き変更 */
+    margin-bottom: 0px !important;
+    padding: 0px;
+    width: 1300px;
+}
+
+#body-footer {
+    overflow: hidden;
+}
+
+
+/* 1300px以上なら横幅1300pxで固定、1300px以下なら100%で可変に */
+
+@media screen and (max-width: 1300px) {
+    #contents-wrapper {
+        width: 100%;
+    }
+}
+
+main {
+    margin: 0px;
+}

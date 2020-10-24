@@ -1,0 +1,5 @@
+/* login内のサイズの固有の設定 */
+
+#contents-wrapper {
+    max-width: 650px;
+}

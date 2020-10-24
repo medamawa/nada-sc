@@ -1,0 +1,61 @@
+/* フッター */
+
+#body-footer {
+    position: relative;
+    background: #222;
+    padding-bottom: 20px;
+}
+
+#body-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#body-footer .logo {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #111;
+}
+
+#body-footer .logo a {
+    display: inline-block;
+}
+
+#body-footer .logo h1 {
+    color: #ccc;
+}
+
+#body-footer .body-footer-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#body-footer .body-footer-nav a {
+    display: block;
+    padding: 0 10px;
+    color: #ccc;
+}
+
+#body-footer .body-footer-nav a:hover {
+    color: #ca353b;
+}
+
+#body-footer .copyright {
+    margin-bottom: 0;
+}
+
+#body-footer .copyright a {
+    color: #ccc;
+}

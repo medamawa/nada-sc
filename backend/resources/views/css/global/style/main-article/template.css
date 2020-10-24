@@ -1,0 +1,104 @@
+/* 記事内の文字装飾の設定 */
+
+.main-article-body h1 {
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 0.25em 0.5em;
+    margin: 42px 0px 30px;
+    background: transparent;
+    border-bottom: solid 1.5px #f6f6f4;
+    border-left: solid 6px #5bbee5;
+    border-radius: 1px;
+}
+
+.main-article-body h2 {
+    font-size: 1.3em;
+    font-weight: 400;
+    padding: 0.25em 0.5em;
+    margin: 24px 0px 18px;
+    background: transparent;
+    border-bottom: solid 1.5px #f6f6f4;
+    border-left: solid 6px #5bbee5;
+    border-radius: 1px;
+}
+
+.main-article-body h3 {
+    font-size: 1.3em;
+    font-weight: 400;
+    padding: 0.25em 0.5em;
+    margin: 24px 0px 18px;
+    border-bottom: solid 1.5px #f6f6f4;
+}
+
+.main-article-body h4 {
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 0.25em 0.5em;
+    margin: 24px 0px 18px;
+    border-bottom: solid 1.5px #f6f6f4;
+}
+
+.main-article-body h5 {
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 0.25em 0.5em;
+    margin: 24px 0px 18px;
+    border-bottom: solid 1.5px #f6f6f4;
+}
+
+.main-article-body h6 {
+    font-size: 1em;
+    font-weight: 400;
+    padding: 0.25em 0.5em;
+    margin: 24px 0px 18px;
+    border-bottom: solid 1.5px #f6f6f4;
+}
+
+.main-article-body strong {
+    font-weight: bold;
+    background: linear-gradient(transparent 70%, #5bbee5 70%);
+}
+
+.main-article-body a {
+    font-weight: bold;
+    color: #5bbee5;
+}
+
+.main-article-body a:hover {
+    color: #a3daf0;
+}
+
+.main-article-body a[target="_blank"]:not([href^="mailto:"])::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f35d';
+    font-weight: 600;
+    margin: 0px 4px;
+}
+
+.main-article-body a[href^="mailto:"]::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f1d8';
+    font-weight: 600;
+    margin: 0px 4px;
+}
+
+.main-article-body blockquote {
+    padding: 12px 18px;
+    margin: 12px 6px;
+    background: #f6f6f4;
+    border-top: solid 4px #5bbee5;
+    border-bottom: solid 4px #5bbee5;
+}
+
+.main-article-body blockquote h1,
+.main-article-body blockquote h2,
+.main-article-body blockquote h3,
+.main-article-body blockquote h4,
+.main-article-body blockquote h5,
+.main-article-body blockquote h6 {
+    margin-top: 0px;
+}
+
+.main-article-body blockquote :last-child {
+    margin-bottom: 0px;
+}
