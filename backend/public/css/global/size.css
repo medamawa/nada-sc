@@ -1,0 +1,13 @@
+/* 全体に共通するサイズの設定 */
+
+#body-header {
+    /* height: 300px; */
+    margin: auto;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+#body-footer {
+    margin: auto;
+    text-align: center;
+}

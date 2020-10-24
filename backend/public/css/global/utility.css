@@ -1,0 +1,5 @@
+/* 装飾の背景を透明にする */
+
+.background-color-transparent {
+    background-color: transparent;
+}
