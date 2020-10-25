@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <title>ロビー nada-sc+</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/global/reset.css') }}" rel="stylesheet" media="all">
+    <link href="css/global/reset.css" rel="stylesheet" media="all">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <link href="{{ asset('css/global/font.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/global/size.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/global/size-template/center.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/global/size-template/fullheight.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/global/style/style.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/global/style/header.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/global/style/footer.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/global/utility.css') }}" rel="stylesheet" media="all">
-    <!-- <link href="{{ asset('css/lobby/size.css') }}" rel="stylesheet" media="all"> -->
-    <link href="{{ asset('css/lobby/style.css') }}" rel="stylesheet" media="all">
+    <link href="css/global/font.css" rel="stylesheet" media="all">
+    <link href="css/global/size.css" rel="stylesheet" media="all">
+    <link href="css/global/size-template/center.css" rel="stylesheet" media="all">
+    <link href="css/global/size-template/fullheight.css" rel="stylesheet" media="all">
+    <link href="css/global/style/style.css" rel="stylesheet" media="all">
+    <link href="css/global/style/header.css" rel="stylesheet" media="all">
+    <link href="css/global/style/footer.css" rel="stylesheet" media="all">
+    <link href="css/global/utility.css" rel="stylesheet" media="all">
+    @yield('css')
 </head>
 
 <body>
@@ -37,24 +36,7 @@
         </header>
 
         <div id="contents-wrapper">
-            <main class="background-color-transparent">
-                <div id="guide-wrapper">
-                    <h1>
-                        <img src="img/nada-sc.png">
-                    </h1>
-
-                    <nav>
-                        <ul>
-                            <li><a href=”#”>Home</a></li>
-                            <li><a href=”#”>News</a></li>
-                            <li><a href=”#”>About</a></li>
-                            <li><a href=”#”>Access</a></li>
-                            <li><a href=”#”>Blog</a></li>
-                        </ul>
-                    </nav>
-
-                </div>
-            </main>
+            @yield('content')
         </div>
     </div>
 
