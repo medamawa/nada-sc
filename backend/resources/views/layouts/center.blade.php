@@ -11,7 +11,6 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="css/global/font.css" rel="stylesheet" media="all">
     <link href="css/global/size.css" rel="stylesheet" media="all">
-    {{-- size-templateについて、個別にカスタマイズできる様に改善 --}}
     <link href="css/global/size-template/center.css" rel="stylesheet" media="all">
     <link href="css/global/size-template/fullheight.css" rel="stylesheet" media="all">
     <link href="css/global/style/style.css" rel="stylesheet" media="all">

@@ -1,4 +1,4 @@
-@extends('layouts.test')
+@extends('layouts.center')
 
 @section('css')
     <!-- <link href="css/lobby/size.css" rel="stylesheet" media="all"> -->
@@ -14,11 +14,11 @@
 
         <nav>
             <ul>
-                <li><a href=”#”>Home</a></li>
-                <li><a href=”#”>News</a></li>
-                <li><a href=”#”>About</a></li>
-                <li><a href=”#”>Access</a></li>
-                <li><a href=”#”>Blog</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Access</a></li>
+                <li><a href="">Blog</a></li>
             </ul>
         </nav>
 
