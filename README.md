@@ -80,7 +80,7 @@ $ make migrate
 // appのコンソールに移動
 $ make app
 
-# composer auto-dumpload
+# composer dump-autoload
 
 // appのコンソールを出る
 # exit
