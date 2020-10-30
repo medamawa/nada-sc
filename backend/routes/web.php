@@ -29,7 +29,7 @@ Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('r
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/view-test', function() {
-    return view('view-test');
+    return view('test.test');
 });
 
 
