@@ -17,4 +17,6 @@ COPY --from=node /opt /opt
 # nginx config file
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 
+RUN npm i -g typescript
+
 WORKDIR /work/backend
