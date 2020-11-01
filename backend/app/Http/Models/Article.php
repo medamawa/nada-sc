@@ -18,7 +18,7 @@ class Article extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'name', 'email', 'title', 'body', 'links',
+        'name', 'email', 'title', 'summary', 'body', 'links',
     ];
 
     public function __construct(array $attributes = [])
@@ -30,13 +30,14 @@ class Article extends Model
     }
 
     // linksはまだ対応していない
-    public function post(String $user_id, String $name, String $email, String $title, String $body)
+    public function post(String $user_id, String $name, String $email, String $title, String $summary, String $body)
     {
         // DBへ新しい下書きを登録
         $this->user_id = $user_id;
         $this->name = $name;
         $this->email = $email;
         $this->title = $title;
+        $this->summary = $summary;
         $this->body = $body;
         $this->save();
     }

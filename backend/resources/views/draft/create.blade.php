@@ -20,6 +20,12 @@
         {{$errors->first('title')}}
         @endif
         <br>
+        [summary]<br>
+        <textarea rows="10" cols="60" name="summary"></textarea>
+        @if ($errors->has('summary'))
+        {{$errors->first('summary')}}
+        @endif
+        <br>
         [body]<br>
         <textarea rows="10" cols="60" name="body"></textarea>
         @if ($errors->has('body'))

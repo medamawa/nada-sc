@@ -42,6 +42,7 @@ class DraftsController extends Controller
             'name' => ['required', 'string'],
             'email' => ['required', 'string', 'email'],
             'title' => ['required', 'string', 'max:50'],
+            'summary' => ['required', 'string'],
             'body' => ['required', 'string'],
             'links' => [],
         ]);
@@ -51,7 +52,7 @@ class DraftsController extends Controller
 
         // DBに登録
         // linksの対応はまだである
-        $draft->post($user_id, $request->name, $request->email, $request->title, $request->body);
+        $draft->post($user_id, $request->name, $request->email, $request->title, $request->summary, $request->body);
 
         return redirect(route('draft.index'));
     }
@@ -89,13 +90,14 @@ class DraftsController extends Controller
             'name' => ['required', 'string'],
             'email' => ['required', 'string', 'email'],
             'title' => ['required', 'string', 'max:50'],
+            'summary' => ['required', 'string'],
             'body' => ['required', 'string'],
             'links' => [],
         ]);
 
         // DBに登録
         // linksの対応はまだである
-        $draft->edit($id, $request->name, $request->email, $request->title, $request->body);
+        $draft->edit($id, $request->name, $request->email, $request->title, $request->summary, $request->body);
 
         return redirect(route('draft.show', ['id' => $id]));
     }

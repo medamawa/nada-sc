@@ -12,6 +12,9 @@
         [title]
         <input type="text" name="title" value="{{ $draft->title }}">
         <br>
+        [summary]<br>
+        <textarea rows="10" cols="60" name="summary">{{ $draft->summary }}</textarea>
+        <br>
         [body]<br>
         <textarea rows="10" cols="60" name="body">{{ $draft->body }}</textarea>
         <br>

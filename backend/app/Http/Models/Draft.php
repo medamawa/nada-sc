@@ -18,7 +18,7 @@ class Draft extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'name', 'email', 'title', 'body', 'links', 'submitted'
+        'name', 'email', 'title', 'summary', 'body', 'links', 'submitted'
     ];
 
     public function __construct(array $attributes = [])
@@ -30,25 +30,27 @@ class Draft extends Model
     }
 
     // linksはまだ対応していない
-    public function post(String $user_id, String $name, String $email, String $title, String $body)
+    public function post(String $user_id, String $name, String $email, String $title, String $summary, String $body)
     {
         // DBへ新しい下書きを登録
         $this->user_id = $user_id;
         $this->name = $name;
         $this->email = $email;
         $this->title = $title;
+        $this->summary = $summary;
         $this->body = $body;
         $this->save();
     }
 
     // linksはまだ対応していない
-    public function edit(String $id, String $name, String $email, String $title, String $body)
+    public function edit(String $id, String $name, String $email, String $title, String $summary, String $body)
     {
         // DBへ下書きの編集を適用
         $draft = Draft::find($id);
         $draft->name = $name;
         $draft->email = $email;
         $draft->title = $title;
+        $draft->summary = $summary;
         $draft->body = $body;
         $draft->save();
     }

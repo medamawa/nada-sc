@@ -78,7 +78,7 @@ class DraftsCheckController extends Controller
         $drafts = $draft->getDraftWithId($id)[0];
 
         // Articleテーブルに登録
-        $article->post($drafts->user_id, $drafts->name, $drafts->email, $drafts->title, $drafts->body);
+        $article->post($drafts->user_id, $drafts->name, $drafts->email, $drafts->title, $draft->summary, $drafts->body);
         
         $articleActivation->activate($id);
 

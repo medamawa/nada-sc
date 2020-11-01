@@ -5,6 +5,7 @@
             <li>{{ "[" . $article->title . "] " }}</li>
             <p>{{ "執筆者：" . $article->name }}</p>
             <p>記事ID：<small>{{ $article->id }}</small></p>
+            <p>{!! $article->summary !!}</P>
             <article>{!! $article->body !!}</article>
             <br>
         @endforeach
