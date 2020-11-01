@@ -54,4 +54,9 @@ class ArticleActivation extends Model
 
         return true;
     }
+
+    public function getDraftIds()
+    {
+        return $this->orderBy('updated_at', 'desc')->get('draft_id');
+    }
 }

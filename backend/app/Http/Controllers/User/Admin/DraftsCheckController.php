@@ -6,19 +6,23 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Models\User;
 use App\Http\Models\Draft;
+use App\Http\Models\ArticleActivation;
 
 class DraftsCheckController extends Controller
 {
-    public function index(Request $request, User $user, Draft $draft)
+    public function index(Request $request, Draft $draft, ArticleActivation $articleActivation)
     {
-        // ユーザーIDを取得
-        $user_id = auth()->user()->id;
+        // チェックする下書きのid一覧を取得
+        $draftIds = $articleActivation->getDraftIds();
 
-        // アカウント名を取得
-        $name = $user->getName($user_id);
+        // $draftIdsのidの配列(オブジェクト型)をリストに変換
+        $draftIdsList = [];
+        foreach ($draftIds as $draftId) {
+            array_push($draftIdsList, $draftId->draft_id);
+        }
 
-        // 下書き一覧を取得
-        $drafts = $draft->getDrafts($user_id);
+        // idのリストを元に下書き一覧を取得
+        $drafts = $draft->getDraftWithIds($draftIdsList);
         
         return view('user.admin.draft-check.index', ['drafts' => $drafts]);
     }
