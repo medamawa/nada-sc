@@ -20,7 +20,7 @@ class DraftsCheckController extends Controller
         // 下書き一覧を取得
         $drafts = $draft->getDrafts($user_id);
         
-        return view('user.admin.draft-check.index', ['name' => $name, 'drafts' => $drafts]);
+        return view('user.admin.draft-check.index', ['drafts' => $drafts]);
     }
 }
 

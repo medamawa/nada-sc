@@ -3,6 +3,7 @@
     <ul>
         @foreach ($drafts as $draft)
             <li>{{ "[" . $draft->title . "] " }}</li>
+            <p>{{ "執筆者：" . $draft->name }}</p>
             <p>記事ID：<small>{{ $draft->id }}</small></p>
             <article>{{!! $draft->body !!}}</article>
             <br>
