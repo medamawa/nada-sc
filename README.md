@@ -33,7 +33,7 @@ $ make init
 
 ※ （下画像の様な）パーミッションエラーが発生した場合
 
-![Imgur](https://imgur.com/BdQ0XxE)
+![Imgur](https://i.imgur.com/BdQ0XxE.png)
 
 もう一度以下のコマンドを実行してください。
 
