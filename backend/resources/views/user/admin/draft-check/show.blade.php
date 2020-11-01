@@ -8,7 +8,6 @@
             <p>{!! $draft->summary !!}</P>
             <article>{{!! $draft->body !!}}</article>
             <br>
-            <a href="{{ route('draft.edit', ['id' => $draft->id]) }}">編集</a>
             <form method="POST" action="{{ route('admin.draft-check.reject', ['id' => $draft->id]) }}">
                 @csrf
                 <input type="submit" value="再編集を依頼する">
