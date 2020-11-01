@@ -41,6 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', function() {
             return response()->json(['role' => 'admin']);
         });
+        // draft(下書き)のチェック
+        Route::group(['prefix' => 'draft-check'], function () {
+            Route::get('/', 'User\Admin\DraftsCheckController@index')->name('admin.draft-check.index');
+        });
     });
 
     // ミドルウェアで委員会アカウント以外を弾く
