@@ -44,6 +44,9 @@ Route::group(['middleware' => 'auth'], function () {
         // draft(下書き)のチェック
         Route::group(['prefix' => 'draft-check'], function () {
             Route::get('/', 'User\Admin\DraftsCheckController@index')->name('admin.draft-check.index');
+            Route::get('/{id}', 'User\Admin\DraftsCheckController@show')->name('admin.draft-check.show');
+            Route::post('/{id}/reject', 'User\Admin\DraftsCheckController@reject')->name('admin.draft-check.reject');
+            Route::post('/{id}/activate', 'User\Admin\DraftsCheckController@activate')->name('admin.draft-check.activate');
         });
     });
 
