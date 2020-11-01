@@ -13,7 +13,7 @@ class DraftsCheckController extends Controller
     public function index(Request $request, Draft $draft, ArticleActivation $articleActivation)
     {
         // チェックする下書きのid一覧を取得
-        $draftIds = $articleActivation->getSubmittedDraftIds();
+        $draftIds = $articleActivation->getAvailableDraftIds();
 
         // $draftIdsのidの配列(オブジェクト型)をリストに変換
         $draftIdsList = [];

@@ -90,8 +90,8 @@ class ArticleActivation extends Model
         return true;
     }
 
-    public function getSubmittedDraftIds()
+    public function getAvailableDraftIds()
     {
-        return $this->where('isSubmitted', true)->orderBy('updated_at', 'desc')->get('draft_id');
+        return $this->where('isSubmitted', true)->where('isActivated', false)->orderBy('updated_at', 'desc')->get('draft_id');
     }
 }

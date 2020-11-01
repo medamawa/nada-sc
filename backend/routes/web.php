@@ -81,4 +81,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/{id}', 'Article\DraftsController@update')->name('draft.update');
         Route::post('/{id}/submit', 'Article\DraftsController@submit')->name('draft.submit');
     });
+
+    // article(記事)
+    Route::group(['prefix' => 'article'], function () {
+        Route::get('/', 'Article\ArticlesController@index')->name('draft.index');
+        Route::get('/{id}', 'Article\ArticlesController@show')->name('draft.show');
+    });
 });
