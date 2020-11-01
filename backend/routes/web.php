@@ -84,7 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // article(記事)
     Route::group(['prefix' => 'article'], function () {
-        Route::get('/', 'Article\ArticlesController@index')->name('draft.index');
-        Route::get('/{id}', 'Article\ArticlesController@show')->name('draft.show');
+        Route::get('/', 'Article\ArticlesController@index')->name('article.index');
+        Route::get('/{id}', 'Article\ArticlesController@show')->name('article.show');
     });
 });

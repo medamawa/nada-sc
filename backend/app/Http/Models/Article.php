@@ -40,4 +40,14 @@ class Article extends Model
         $this->body = $body;
         $this->save();
     }
+
+    public function getArticles()
+    {
+        return $this->orderBy('updated_at', 'desc')->get();
+    }
+
+    public function getArticleWithId(String $id)
+    {
+        return $this->where('id', $id)->get();
+    }
 }
