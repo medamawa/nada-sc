@@ -6,7 +6,7 @@
             <p>{{ "執筆者：" . $draft->name }}</p>
             <p>記事ID：<small>{{ $draft->id }}</small></p>
             <p>{!! $draft->summary !!}</P>
-            <article>{{!! $draft->body !!}}</article>
+            <article>{!! $draft->body !!}</article>
             <br>
             <form method="POST" action="{{ route('admin.draft-check.reject', ['id' => $draft->id]) }}">
                 @csrf
