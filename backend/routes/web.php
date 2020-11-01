@@ -41,6 +41,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', function() {
             return response()->json(['role' => 'admin']);
         });
+        // draft(下書き)のチェック
+        Route::group(['prefix' => 'draft-check'], function () {
+            Route::get('/', 'User\Admin\DraftsCheckController@index')->name('admin.draft-check.index');
+            Route::get('/{id}', 'User\Admin\DraftsCheckController@show')->name('admin.draft-check.show');
+            Route::post('/{id}/reject', 'User\Admin\DraftsCheckController@reject')->name('admin.draft-check.reject');
+            Route::post('/{id}/activate', 'User\Admin\DraftsCheckController@activate')->name('admin.draft-check.activate');
+        });
     });
 
     // ミドルウェアで委員会アカウント以外を弾く
@@ -73,5 +80,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/{id}/edit', 'Article\DraftsController@edit')->name('draft.edit');
         Route::post('/{id}', 'Article\DraftsController@update')->name('draft.update');
         Route::post('/{id}/submit', 'Article\DraftsController@submit')->name('draft.submit');
+    });
+
+    // article(記事)
+    Route::group(['prefix' => 'article'], function () {
+        Route::get('/', 'Article\ArticlesController@index')->name('article.index');
+        Route::get('/{id}', 'Article\ArticlesController@show')->name('article.show');
     });
 });

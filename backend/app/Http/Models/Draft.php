@@ -63,6 +63,11 @@ class Draft extends Model
         return $this->where('id', $id)->get();
     }
 
+    public function getDraftWithIds(Array $ids)
+    {
+        return $this->find($ids);
+    }
+
     public function checkDraft(String $id)
     {
         return $this->where('id', $id)->first();
