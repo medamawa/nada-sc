@@ -7,6 +7,7 @@
             <p>記事ID：<small>{{ $article->id }}</small></p>
             <p>{!! $article->summary !!}</P>
             <article>{!! $article->body !!}</article>
+            <p>関連リンク：<small>{{ $article->links }}</small></p>
             <br>
         @endforeach
     </ul>

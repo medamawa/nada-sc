@@ -50,9 +50,13 @@ class DraftsController extends Controller
         // ユーザーIDを取得
         $user_id = auth()->user()->id;
 
+        // 仮のlinksを作成
+        // arrayを渡せばjsonに変換して利用する
+        $l_array = ["l" => ["http://127.0.0.1:8000/draft/create", "http://127.0.0.1:8000/draft"]];
+        $links = json_encode($l_array);
+
         // DBに登録
-        // linksの対応はまだである
-        $draft->post($user_id, $request->name, $request->email, $request->title, $request->summary, $request->body);
+        $draft->post($user_id, $request->name, $request->email, $request->title, $request->summary, $request->body, $links);
 
         return redirect(route('draft.index'));
     }
@@ -96,8 +100,7 @@ class DraftsController extends Controller
         ]);
 
         // DBに登録
-        // linksの対応はまだである
-        $draft->edit($id, $request->name, $request->email, $request->title, $request->summary, $request->body);
+        $draft->edit($id, $request->name, $request->email, $request->title, $request->summary, $request->body, $request->links);
 
         return redirect(route('draft.show', ['id' => $id]));
     }

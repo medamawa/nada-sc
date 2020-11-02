@@ -7,6 +7,7 @@
             <p>記事ID：<small>{{ $draft->id }}</small></p>
             <p>{!! $draft->summary !!}</P>
             <article>{!! $draft->body !!}</article>
+            <p>関連リンク：<small>{{ $draft->links }}</small></p>
             <br>
             <a href="{{ route('draft.edit', ['id' => $draft->id]) }}">編集</a>
             <form method="POST" action="{{ route('draft.submit', ['id' => $draft->id]) }}">

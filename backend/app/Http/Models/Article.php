@@ -29,8 +29,7 @@ class Article extends Model
         $this->attributes['id'] = Uuid::uuid4()->toString();
     }
 
-    // linksはまだ対応していない
-    public function post(String $user_id, String $name, String $email, String $title, String $summary, String $body)
+    public function post(String $user_id, String $name, String $email, String $title, String $summary, String $body, String $links = null)
     {
         // DBへ新しい下書きを登録
         $this->user_id = $user_id;
@@ -39,6 +38,7 @@ class Article extends Model
         $this->title = $title;
         $this->summary = $summary;
         $this->body = $body;
+        $this->links = $links;
         $this->save();
     }
 
