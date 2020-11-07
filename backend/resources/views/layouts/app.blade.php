@@ -21,6 +21,12 @@
 <body>
 	<div id="app">
 <my-header></my-header>
+	<my-menue
+		topString="test"
+		columnlink="[testlink,testlink,testlink,testlink,testlink,testlink,testlink,]"
+		columnstring="[teststring,teststring,teststring,teststring,teststring,teststring,]"
+	>
+	</my-menue>
 <my-footer></my-footer>
 	</div>
 	<script src="{{ asset('js/app.js') }}" defer></script>
