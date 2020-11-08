@@ -1,0 +1,18 @@
+@import "./variables.scss";
+
+h1 {
+	font-size: 2rem;
+	color: $deep-blue;
+	border-bottom: dashed 2px $deep-blue;
+	font-weight: 300;
+}
+
+h2 {
+	font-weight: 400;
+	border-left: solid 6px $deep-blue;
+	padding-left: 8px;
+}
+
+p {
+	color: $text-color;
+}

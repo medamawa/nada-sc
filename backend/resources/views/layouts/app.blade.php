@@ -27,6 +27,10 @@
 		columnstring="[teststring,teststring,teststring,teststring,teststring,teststring,]"
 	>
 	</my-menue>
+	<main>
+	@yield("main")
+	</main>
+	</my-menue>
 <my-footer></my-footer>
 	</div>
 	<script src="{{ asset('js/app.js') }}" defer></script>
