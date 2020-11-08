@@ -1,18 +1,31 @@
 @import "./variables.scss";
 
-h1 {
-	font-size: 2rem;
-	color: $deep-blue;
-	border-bottom: dashed 2px $deep-blue;
-	font-weight: 300;
-}
+.wrap {
+	border-radius: 9px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	padding: 0.5rem;
+	margin-bottom: 2rem;
+	@include sm {
+		width: calc( 100% - 1rem );
+	}
+	@include lg {
+		width: calc( 70% - 1rem );
+	}
+	h1 {
+		font-size: 2rem;
+		color: $deep-blue;
+		border-bottom: dashed 2px $deep-blue;
+		font-weight: 300;
+	}
 
-h2 {
-	font-weight: 400;
-	border-left: solid 6px $deep-blue;
-	padding-left: 8px;
-}
+	h2 {
+		font-weight: 400;
+		border-left: solid 6px $deep-blue;
+		padding-left: 8px;
+		border-bottom: solid 1.5px $gray;
+	}
 
-p {
-	color: $text-color;
+	p {
+		color: $text-color;
+	}
 }

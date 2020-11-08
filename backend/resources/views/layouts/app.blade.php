@@ -21,18 +21,57 @@
 <body>
 	<div id="app">
 <my-header></my-header>
-	<my-menue
-		topString="test"
-		columnlink="[testlink,testlink,testlink,testlink,testlink,testlink,testlink,]"
-		columnstring="[teststring,teststring,teststring,teststring,teststring,teststring,]"
-	>
-	</my-menue>
 	<main>
-	@yield("main")
+		@yield("main")
+		<div class="menues">
+			<my-menue
+				topString="メインフィード"
+				columnlink="[testlink,testlink,testlink,testlink,testlink,testlink,testlink,]"
+				columnstring="[teststring,teststring,teststring,teststring,teststring,teststring,]"
+			>
+			</my-menue>
+			<my-menue
+				topString="募集"
+				columnlink="[testlink,testlink,testlink,testlink,testlink,testlink,testlink,]"
+				columnstring="[teststring,teststring,teststring,teststring,teststring,teststring,]"
+			>
+			</my-menue>
+			<my-menue
+				topString="意見"
+				columnlink="[testlink,testlink,testlink,testlink,testlink,testlink,testlink,]"
+				columnstring="[teststring,teststring,teststring,teststring,teststring,teststring,]"
+			>
+			</my-menue>
+		</div>
 	</main>
-	</my-menue>
 <my-footer></my-footer>
 	</div>
 	<script src="{{ asset('js/app.js') }}" defer></script>
 </body>
+
+<style>
+main {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 10vw;
+}
+
+@media (max-width: 1000px) {
+	.menues {
+		width: 100%;
+	}
+	main {
+		flex-direction: column;
+	}
+}
+@media (min-width: 1000px) {
+	.menues {
+		width: 20%;
+	}
+	main {
+		flex-direction: row;
+	}
+}
+</style>
+
 </html>

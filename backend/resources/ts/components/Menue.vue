@@ -32,9 +32,10 @@ export default {
 $rad1: 6px;
 
 .menue-wrap {
-	width: 15vw;
+	width: 100%;
 	border-radius: $rad1;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+	margin-bottom: 0.5rem;
 	.column-top {
 		background: $deep-blue;
 		color: white;
@@ -42,13 +43,13 @@ $rad1: 6px;
 		border-top-right-radius: $rad1;
 		display: flex;
 		height: 2.5rem;
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: 200;
 		justify-content: center;
 		align-items: center;
 	}
 	.column {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		height: 2.5rem;
 		border-bottom: 1px solid #dddddb;
 		display: flex;

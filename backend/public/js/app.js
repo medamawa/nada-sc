@@ -28167,7 +28167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("header", null, " this is test header.h ");
+  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("header");
 }
 
 /***/ }),
@@ -28189,24 +28189,26 @@ const _withId = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["withScopeI
 
 Object(vue__WEBPACK_IMPORTED_MODULE_0__["pushScopeId"])("data-v-7043a300");
 
-const _hoisted_1 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h1", null, "nyan cat", -1
+const _hoisted_1 = {
+  class: "wrap"
+};
+
+const _hoisted_2 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h1", null, "nyan cat", -1
 /* HOISTED */
 );
 
-const _hoisted_2 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h2", null, "nyan cat", -1
+const _hoisted_3 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h2", null, "nyan cat", -1
 /* HOISTED */
 );
 
-const _hoisted_3 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("p", null, "今日はいい天気ですね", -1
+const _hoisted_4 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("p", null, "今日はいい天気ですね", -1
 /* HOISTED */
 );
 
 Object(vue__WEBPACK_IMPORTED_MODULE_0__["popScopeId"])();
 
 const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])(vue__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, [_hoisted_1, _hoisted_2, _hoisted_3], 64
-  /* STABLE_FRAGMENT */
-  );
+  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_1, [_hoisted_2, _hoisted_3, _hoisted_4]);
 });
 
 /***/ }),
@@ -28279,7 +28281,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header {\n  background: #f6f6f6;\n  width: 100%;\n  height: 10vh;\n  border-bottom: 2px solid #224473;\n}\n", ""]);
+exports.push([module.i, "header {\n  background: #f6f6f6;\n  width: 100%;\n  height: 10vh;\n  border-bottom: 2px solid #224473;\n  margin-bottom: 1rem;\n}\n", ""]);
 
 // exports
 
@@ -28298,7 +28300,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h1[data-v-7043a300] {\n  font-size: 2rem;\n  color: #5bbee5;\n  border-bottom: dashed 2px #5bbee5;\n  font-weight: 300;\n}\nh2[data-v-7043a300] {\n  font-weight: 400;\n  border-left: solid 6px #5bbee5;\n  padding-left: 8px;\n}\np[data-v-7043a300] {\n  color: #5d627b;\n}\n", ""]);
+exports.push([module.i, ".wrap[data-v-7043a300] {\n  border-radius: 9px;\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);\n  padding: 0.5rem;\n  margin-bottom: 2rem;\n}\n@media (max-width: 1000px) {\n.wrap[data-v-7043a300] {\n    width: calc( 100% - 1rem);\n}\n}\n@media (min-width: 1000px) {\n.wrap[data-v-7043a300] {\n    width: calc( 70% - 1rem);\n}\n}\n.wrap h1[data-v-7043a300] {\n  font-size: 2rem;\n  color: #5bbee5;\n  border-bottom: dashed 2px #5bbee5;\n  font-weight: 300;\n}\n.wrap h2[data-v-7043a300] {\n  font-weight: 400;\n  border-left: solid 6px #5bbee5;\n  padding-left: 8px;\n  border-bottom: solid 1.5px #f6f6f6;\n}\n.wrap p[data-v-7043a300] {\n  color: #5d627b;\n}\n", ""]);
 
 // exports
 
@@ -28317,7 +28319,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menue-wrap {\n  width: 15vw;\n  border-radius: 6px;\n  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);\n}\n.menue-wrap .column-top {\n  background: #5bbee5;\n  color: white;\n  border-top-left-radius: 6px;\n  border-top-right-radius: 6px;\n  display: flex;\n  height: 2.5rem;\n  font-size: 1.5rem;\n  font-weight: 200;\n  justify-content: center;\n  align-items: center;\n}\n.menue-wrap .column {\n  font-size: 1.2rem;\n  height: 2.5rem;\n  border-bottom: 1px solid #dddddb;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 300;\n}\n.menue-wrap .column a {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:hover {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:visited {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:link {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:active {\n  color: #5d627b;\n  text-decoration: none;\n}\n", ""]);
+exports.push([module.i, ".menue-wrap {\n  width: 100%;\n  border-radius: 6px;\n  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);\n  margin-bottom: 0.5rem;\n}\n.menue-wrap .column-top {\n  background: #5bbee5;\n  color: white;\n  border-top-left-radius: 6px;\n  border-top-right-radius: 6px;\n  display: flex;\n  height: 2.5rem;\n  font-size: 1rem;\n  font-weight: 200;\n  justify-content: center;\n  align-items: center;\n}\n.menue-wrap .column {\n  font-size: 1rem;\n  height: 2.5rem;\n  border-bottom: 1px solid #dddddb;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 300;\n}\n.menue-wrap .column a {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:hover {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:visited {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:link {\n  color: #5d627b;\n  text-decoration: none;\n}\n.menue-wrap .column a:active {\n  color: #5d627b;\n  text-decoration: none;\n}\n", ""]);
 
 // exports
 
