@@ -1,7 +1,7 @@
 <template>
 <header :class="{ open: isOpen }">
 	<div class="links">
-		<div class="link">名状しがたいロゴのようなもの</div>
+		<div class="link logo">名状しがたいロゴのようなもの</div>
 		<div class="link" v-if="isOpen"><a href="/papers"><span>お知らせ</span></a></div>
 		<div class="link" v-if="isOpen"><a href="/recruitment"><span>募集</span></a></div>
 		<div class="link" v-if="isOpen"><a href="/opinionbox"><span>意見箱</span></a></div>
@@ -43,8 +43,6 @@ header{
 	align-items: flex-start;
 	.links {
 		.logo {
-			height: 75%;
-			border: solid black 1px;
 			margin: 0 2rem;
 		}
 		display: flex;
