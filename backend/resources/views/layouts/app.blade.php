@@ -50,6 +50,9 @@
 </body>
 
 <style>
+body {
+	margin: 0;
+}
 main {
 	display: flex;
 	justify-content: space-between;

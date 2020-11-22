@@ -1,10 +1,32 @@
 <template>
 <div class="wrap">
-	<h1>nyan cat</h1>
-	<h2>nyan cat</h2>
-	<p>今日はいい天気ですね</p>
+<bread-list></bread-list>
+<my-article 
+	title="title"
+	name="name"
+	data="data"
+	summary="kyouhaiitennkidesunetinaminikyounobangohanhahapposaidesita"
+/>
+<my-article 
+	title="title"
+	name="name"
+	data="data"
+	summary="kyouhaiitennkidesunetinaminikyounobangohanhahapposaidesita"
+/>
+<my-article 
+	title="title"
+	name="name"
+	data="data"
+	summary="kyouhaiitennkidesunetinaminikyounobangohanhahapposaidesita"
+/>
+<my-article 
+	title="title"
+	name="name"
+	data="data"
+	summary="kyouhaiitennkidesunetinaminikyounobangohanhahapposaidesita"
+/>
 </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../sass/style.scss";
 </style>

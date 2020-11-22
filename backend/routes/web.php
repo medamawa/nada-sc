@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/opinion', function () {
+    return view('opinion');
+});
+
+Route::get('/write', function () {
+    return view('write');
+});
+
 Route::get('/test', function () {
     return view('test');
 });
