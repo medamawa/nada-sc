@@ -21,6 +21,7 @@
         "vue-loader": "^16.0.0-beta.9"
     },
     "dependencies": {
+        "axios": "^0.21.0",
         "laravel-mix": "^5.0.7",
         "marked": "^1.2.5",
         "vue": "^3.0.2"

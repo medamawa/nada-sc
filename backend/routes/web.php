@@ -25,6 +25,14 @@ Route::get('/write', function () {
     return view('write');
 });
 
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
 Route::get('/test', function () {
     return view('test');
 });
@@ -32,12 +40,12 @@ Route::get('/test', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Authentication Routes...
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+//Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+//Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/view-test', function() {
