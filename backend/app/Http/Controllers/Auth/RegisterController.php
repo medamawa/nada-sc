@@ -49,6 +49,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+		/*
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -59,7 +61,20 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
+		 */
 
+		//password no confirm ga yabasou nanode ittan sakujo
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'user_name' => ['required', 'string', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:255', 'unique:users'],
+            'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
+            'role' => ['required', 'integer'],
+            'password' => ['required', 'string', 'min:8',],
+        ]);
+    }
     /**
      * Create a new user instance after a valid registration.
      * 

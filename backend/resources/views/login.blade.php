@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('main')
-<Home></Home>
+<login></login>
 @endsection
