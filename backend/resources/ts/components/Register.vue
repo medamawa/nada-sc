@@ -34,19 +34,23 @@ export default{
 			const form = document.querySelector("form");
 			const element = document.getElementById("pass");
 			axios.post('/register', {
-				user_name: "test",
-				name: "test",
+				user_name: "testtest",
+				name: "testtest",
 				password: "password",
 				role: 1,
-				email: "test@gmail.com",
+				email: "testt@gmail.com",
 			})
 			.then(res => {
 				axios.post('/login', {
-					user_name: "test",
-					name: "test",
+					user_name: "testtest",
+					name: "testtest",
 					password: "password",
 					role: 1,
-					email: "test@gmail.com",
+					email: "testt@gmail.com",
+					remember: "true"
+				}).then
+				(res => {
+					console.log(res);
 				})
 			});
 		}
