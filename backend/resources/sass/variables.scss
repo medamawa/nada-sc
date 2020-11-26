@@ -1,0 +1,25 @@
+// Body
+$body-bg: #f6f6f6;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$gray: #f6f6f6;
+$light-blue: #f0f8ff;
+$deep-blue: #5bbee5;
+$text-color: #5d627b;
+
+@mixin sm {
+  @media (max-width: (1000px)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: (1000px)) {
+    @content;
+  }
+}

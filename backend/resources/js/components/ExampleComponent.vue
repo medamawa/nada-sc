@@ -14,7 +14,7 @@
     </div>
 </template>
 
-<script>
+<script lang="typescript">
     export default {
         mounted() {
             console.log('Component mounted.')

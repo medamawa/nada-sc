@@ -14,7 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/opinion', function () {
+    return view('opinion');
+});
+
+Route::get('/write', function () {
+    return view('write');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/test', function () {
+    return view('test');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -81,6 +101,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/{id}', 'Article\DraftsController@update')->name('draft.update');
         Route::post('/{id}/submit', 'Article\DraftsController@submit')->name('draft.submit');
     });
+<<<<<<< HEAD
 
     // article(記事)
     Route::group(['prefix' => 'article'], function () {
@@ -97,3 +118,5 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 });
+=======
+>>>>>>> view
