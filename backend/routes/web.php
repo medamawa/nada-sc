@@ -85,6 +85,15 @@ Route::group(['middleware' => 'auth'], function () {
     // article(記事)
     Route::group(['prefix' => 'article'], function () {
         Route::get('/', 'Article\ArticlesController@index')->name('article.index');
-        Route::get('/{id}', 'Article\ArticlesController@show')->name('article.show');
+        Route::get('/get/{id}', 'Article\ArticlesController@show')->name('article.show');
+        Route::group(['prefix' => 'committee'], function () {
+            Route::get('/', 'Article\ArticlesController@committeeIndex')->name('article.committee.index');
+        });
+        Route::group(['prefix' => 'club'], function () {
+            Route::get('/', 'Article\ArticlesController@clubIndex')->name('article.club.index');
+        });
+        Route::group(['prefix' => 'personal'], function () {
+            Route::get('/', 'Article\ArticlesController@personalIndex')->name('article.personal.index');
+        });
     });
 });

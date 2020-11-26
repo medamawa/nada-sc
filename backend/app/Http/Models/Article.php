@@ -51,4 +51,22 @@ class Article extends Model
     {
         return $this->where('id', $id)->get();
     }
+
+    public function getCommitteeArticles()
+    {
+        // " role = 2 " は委員会を表している
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 2)->orderBy('articles.updated_at', 'desc')->get();
+    }
+
+    public function getClubArticles()
+    {
+        // " role = 3 " はクラブを表している
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 3)->orderBy('articles.updated_at', 'desc')->get();
+    }
+
+    public function getPersonalArticles()
+    {
+        // " role = 3 " はクラブを表している
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 4)->orderBy('articles.updated_at', 'desc')->get();
+    }
 }
