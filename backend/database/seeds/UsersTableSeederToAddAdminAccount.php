@@ -16,7 +16,7 @@ class UsersTableSeederToAddAdminAccount extends Seeder
             'user_name' => 'me-admin',
             'name' => '管理者',
             'email' => 'dotakoyaki@gmail.com',
-            'role' => 1,
+            'role' => 0,
             'password' => 'et-tu-brute?',
         ]);
     }

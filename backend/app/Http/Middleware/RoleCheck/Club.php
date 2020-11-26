@@ -20,7 +20,7 @@ class Club
         $user_id = auth()->user()->id;
 
         // クラブアカウントかどうか確認、クラブアカウントであれば通す
-        if (User::where('id', $user_id)->value('role') == 3) {
+        if (User::where('id', $user_id)->value('role') == 2) {
             return $next($request);
         }
             

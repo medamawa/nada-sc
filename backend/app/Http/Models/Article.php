@@ -54,19 +54,19 @@ class Article extends Model
 
     public function getCommitteeArticles()
     {
-        // " role = 2 " は委員会を表している
-        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 2)->orderBy('articles.updated_at', 'desc')->get();
+        // " role = 1 " は委員会を表している
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 1)->orderBy('articles.updated_at', 'desc')->get();
     }
 
     public function getClubArticles()
     {
-        // " role = 3 " はクラブを表している
-        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 3)->orderBy('articles.updated_at', 'desc')->get();
+        // " role = 2 " はクラブを表している
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 2)->orderBy('articles.updated_at', 'desc')->get();
     }
 
     public function getPersonalArticles()
     {
         // " role = 3 " はクラブを表している
-        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 4)->orderBy('articles.updated_at', 'desc')->get();
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 3)->orderBy('articles.updated_at', 'desc')->get();
     }
 }

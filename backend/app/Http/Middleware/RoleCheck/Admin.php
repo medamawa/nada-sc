@@ -20,7 +20,7 @@ class Admin
         $user_id = auth()->user()->id;
 
         // 管理者(admin)かどうか確認、管理者であれば通す
-        if (User::where('id', $user_id)->value('role') == 1) {
+        if (User::where('id', $user_id)->value('role') == 0) {
             return $next($request);
         }
             
