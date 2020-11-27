@@ -32,44 +32,52 @@ Route::get('/view-test', function() {
 // ミドルウェアで認証済みでない(ログインしていない)ユーザーを弾く
 Route::group(['middleware' => 'auth'], function () {
 
-    // ミドルウェアで管理者(admin)以外を弾く
-    Route::group(['prefix' => 'admin', 'middleware' => 'auth.admin'], function () {
-        Route::get('/', function() {
-            return response()->json(['role' => 'admin']);
-        });
-
-        // Registration Routes...
-        // adminのみ新規登録可能
-        Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-        Route::post('/register', 'Auth\RegisterController@register');
-        
-        // draft(下書き)のチェック
-        Route::group(['prefix' => 'draft-check'], function () {
-            Route::get('/', 'User\Admin\DraftsCheckController@index')->name('admin.draft-check.index');
-            Route::get('/{id}', 'User\Admin\DraftsCheckController@show')->name('admin.draft-check.show');
-            Route::post('/{id}/reject', 'User\Admin\DraftsCheckController@reject')->name('admin.draft-check.reject');
-            Route::post('/{id}/activate', 'User\Admin\DraftsCheckController@activate')->name('admin.draft-check.activate');
-        });
-    });
-
-    // ミドルウェアで委員会アカウント以外を弾く
-    Route::group(['prefix' => 'committee', 'middleware' => 'auth.committee'], function () {
-        Route::get('/', function() {
-            return response()->json(['role' => 'committee']);
+    Route::group(['prefix' => 'admin'], function () {
+        // ミドルウェアで管理者(admin)以外を弾く
+        Route::group(['middleware' => 'auth.admin'], function () {
+            Route::get('/', function() {
+                return response()->json(['role' => 'admin']);
+            });
+    
+            // Registration Routes...
+            // adminのみ新規登録可能
+            Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+            Route::post('/register', 'Auth\RegisterController@register');
+            
+            // draft(下書き)のチェック
+            Route::group(['prefix' => 'draft-check'], function () {
+                Route::get('/', 'User\Admin\DraftsCheckController@index')->name('admin.draft-check.index');
+                Route::get('/{id}', 'User\Admin\DraftsCheckController@show')->name('admin.draft-check.show');
+                Route::post('/{id}/reject', 'User\Admin\DraftsCheckController@reject')->name('admin.draft-check.reject');
+                Route::post('/{id}/activate', 'User\Admin\DraftsCheckController@activate')->name('admin.draft-check.activate');
+            });
         });
     });
 
-    // ミドルウェアでクラブアカウント以外を弾く
-    Route::group(['prefix' => 'club', 'middleware' => 'auth.club'], function () {
-        Route::get('/', function() {
-            return response()->json(['role' => 'club']);
+    Route::group(['prefix' => 'committee'], function () {
+        // ミドルウェアで委員会アカウント以外を弾く
+        Route::group(['middleware' => 'auth.committee'], function () {
+            Route::get('/', function() {
+                return response()->json(['role' => 'committee']);
+            });
         });
     });
 
-    // ミドルウェアで一般アカウント(general)以外を弾く
-    Route::group(['prefix' => 'general', 'middleware' => 'auth.general'], function () {
-        Route::get('/', function() {
-            return response()->json(['role' => 'general']);
+    Route::group(['prefix' => 'club'], function () {
+        // ミドルウェアでクラブアカウント以外を弾く
+        Route::group(['middleware' => 'auth.club'], function () {
+            Route::get('/', function() {
+                return response()->json(['role' => 'club']);
+            });
+        });
+    });
+
+    Route::group(['prefix' => 'general'], function () {
+        // ミドルウェアで一般アカウント(general)以外を弾く
+        Route::group(['middleware' => 'auth.general'], function () {
+            Route::get('/', function() {
+                return response()->json(['role' => 'general']);
+            });
         });
     });
 
