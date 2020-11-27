@@ -41,6 +41,14 @@ class ArticlesController extends Controller
         return view('article.committee.index', ['articles' => $articles]);
     }
 
+    public function committeeShow($name, Article $article)
+    {
+        // 委員会ごとの記事一覧を取得
+        $articles = $article->getCommitteeArticleWithName($name);
+
+        return view('article.committee.show', ['articles' => $articles]);
+    }
+
     public function clubIndex(Article $article)
     {
         // クラブの記事一覧を取得

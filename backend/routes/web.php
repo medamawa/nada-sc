@@ -24,10 +24,6 @@ Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-// Registration Routes...
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
-
 Route::get('/view-test', function() {
     return view('test.test');
 });
@@ -41,6 +37,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', function() {
             return response()->json(['role' => 'admin']);
         });
+
+        // Registration Routes...
+        // adminのみ新規登録可能
+        Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+        Route::post('/register', 'Auth\RegisterController@register');
+        
         // draft(下書き)のチェック
         Route::group(['prefix' => 'draft-check'], function () {
             Route::get('/', 'User\Admin\DraftsCheckController@index')->name('admin.draft-check.index');
@@ -91,6 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
         });
         Route::group(['prefix' => 'committee'], function () {
             Route::get('/', 'Article\ArticlesController@committeeIndex')->name('article.committee.index');
+            Route::get('/{name}', 'Article\ArticlesController@committeeShow')->name('article.committee.show');
         });
         Route::group(['prefix' => 'club'], function () {
             Route::get('/', 'Article\ArticlesController@clubIndex')->name('article.club.index');

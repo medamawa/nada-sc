@@ -38,7 +38,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // admin以外を弾くように変更
+        // $this->middleware('guest');
+        $this->middleware('auth.admin');
     }
 
     /**

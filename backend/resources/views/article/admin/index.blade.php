@@ -9,4 +9,5 @@
             <a href="{{ route('article.show', ['id' => $article->id]) }}">詳細を表示</a>
         @endforeach
     </ul>
+    <a href="{{ route('article.index') }}">記事一覧に戻る</a>
 </body>
