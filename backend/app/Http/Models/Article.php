@@ -76,6 +76,12 @@ class Article extends Model
         return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 2)->orderBy('articles.updated_at', 'desc')->get();
     }
 
+    public function getClubArticleWithName(String $name)
+    {
+        // " role = 2 " はクラブを表している
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 1)->where('users.name', '=', $name)->orderBy('articles.updated_at', 'desc')->get();
+    }
+
     public function getPersonalArticles()
     {
         // " role = 3 " はクラブを表している

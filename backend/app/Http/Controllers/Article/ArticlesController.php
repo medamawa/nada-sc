@@ -57,9 +57,17 @@ class ArticlesController extends Controller
         return view('article.club.index', ['articles' => $articles]);
     }
 
+    public function clubShow($name, Article $article)
+    {
+        // クラブごとの記事一覧を取得
+        $articles = $article->getClubArticleWithName($name);
+
+        return view('article.club.show', ['articles' => $articles]);
+    }
+
     public function personalIndex(Article $article)
     {
-        // クラブの記事一覧を取得
+        // 個人の記事一覧を取得
         $articles = $article->getPersonalArticles();
 
         return view('article.personal.index', ['articles' => $articles]);

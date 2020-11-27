@@ -97,6 +97,7 @@ Route::group(['middleware' => 'auth'], function () {
         });
         Route::group(['prefix' => 'club'], function () {
             Route::get('/', 'Article\ArticlesController@clubIndex')->name('article.club.index');
+            Route::get('/{name}', 'Article\ArticlesController@clubShow')->name('article.club.show');
         });
         Route::group(['prefix' => 'personal'], function () {
             Route::get('/', 'Article\ArticlesController@personalIndex')->name('article.personal.index');
