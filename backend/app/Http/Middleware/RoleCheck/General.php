@@ -20,7 +20,7 @@ class General
         $user_id = auth()->user()->id;
 
         // 一般アカウント(general)かどうか確認、一般アカウントであれば通す
-        if (User::where('id', $user_id)->value('role') == 4) {
+        if (User::where('id', $user_id)->value('role') == 3) {
             return $next($request);
         }
             

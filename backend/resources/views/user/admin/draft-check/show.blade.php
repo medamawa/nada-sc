@@ -9,12 +9,15 @@
             <article>{!! $draft->body !!}</article>
             <p>関連リンク：<small>{{ $draft->links }}</small></p>
             <br>
-            <a href="{{ route('draft.edit', ['id' => $draft->id]) }}">編集</a>
-            <form method="POST" action="{{ route('draft.submit', ['id' => $draft->id]) }}">
+            <form method="POST" action="{{ route('admin.draft-check.reject', ['id' => $draft->id]) }}">
                 @csrf
-                <input type="submit" value="チェックを依頼をする">
+                <input type="submit" value="再編集を依頼する">
+            </form>
+            <form method="POST" action="{{ route('admin.draft-check.activate', ['id' => $draft->id]) }}">
+                @csrf
+                <input type="submit" value="OK">
             </form>
         @endforeach
     </ul>
-    <a href="{{ route('draft.create') }}">new draft</a><br>
+    <a href="{{ route('admin.draft-check.index') }}">一覧に戻る</a><br>
 </body>

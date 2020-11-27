@@ -39,19 +39,31 @@ class DraftsController extends Controller
     public function store(Request $request, Draft $draft)
     {
         $request->validate([
-            'name' => ['required', 'string'],
-            'email' => ['required', 'string', 'email'],
-            'title' => ['required', 'string', 'max:50'],
-            'body' => ['required', 'string'],
-            'links' => [],
+            'name' => ['nullable', 'string'],
+            'email' => ['nullable', 'string', 'email'],
+            'title' => ['nullable', 'string', 'max:50'],
+            'summary' => ['nullable', 'string'],
+            'body' => ['nullable', 'string'],
+            'links' => ['nullable'],
         ]);
 
         // ユーザーIDを取得
         $user_id = auth()->user()->id;
 
+        // それぞれの要素が空の場合にデフォルト値をいれる
+        $name = ($request->name) ? $request->name : "名前を入力してください。";
+        $email = ($request->email) ? $request->email : "email@ex.ample";
+        $title = ($request->title) ? $request->title : "タイトルを入力してください。";
+        $summary = ($request->summary) ? $request->summary : "要約文を入力してください。";
+        $body = ($request->body) ? $request->body : "本文を入力してください。";
+
+        // 仮のlinksを作成
+        // arrayを渡せばjsonに変換して利用する
+        $l_array = ["l" => ["http://127.0.0.1:8000/draft/create", "http://127.0.0.1:8000/draft"]];
+        $links = json_encode($l_array);
+
         // DBに登録
-        // linksの対応はまだである
-        $draft->post($user_id, $request->name, $request->email, $request->title, $request->body);
+        $draft->post($user_id, $name, $email, $title, $summary, $body, $links);
 
         return redirect(route('draft.index'));
     }
@@ -89,13 +101,13 @@ class DraftsController extends Controller
             'name' => ['required', 'string'],
             'email' => ['required', 'string', 'email'],
             'title' => ['required', 'string', 'max:50'],
+            'summary' => ['required', 'string'],
             'body' => ['required', 'string'],
             'links' => [],
         ]);
 
         // DBに登録
-        // linksの対応はまだである
-        $draft->edit($id, $request->name, $request->email, $request->title, $request->body);
+        $draft->edit($id, $request->name, $request->email, $request->title, $request->summary, $request->body, $request->links);
 
         return redirect(route('draft.show', ['id' => $id]));
     }

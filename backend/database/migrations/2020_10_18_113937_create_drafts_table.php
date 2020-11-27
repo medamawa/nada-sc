@@ -19,6 +19,7 @@ class CreateDraftsTable extends Migration
             $table->string('name')->comment('ユーザー名');
             $table->string('email')->comment('連絡用メールアドレス');
             $table->string('title')->comment('タイトル');
+            $table->string('summary')->comment('要約');
             $table->string('body')->comment('本文');
             $table->json('links')->nullable()->comment('参考リンク');
             $table->boolean('submitted')->default(false)->comment('提出フラグ');

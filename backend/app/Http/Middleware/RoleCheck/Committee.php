@@ -20,7 +20,7 @@ class Committee
         $user_id = auth()->user()->id;
 
         // 委員会アカウントかどうか確認、委員会アカウントであれば通す
-        if (User::where('id', $user_id)->value('role') == 2) {
+        if (User::where('id', $user_id)->value('role') == 1) {
             return $next($request);
         }
             
