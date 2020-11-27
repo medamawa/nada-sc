@@ -25,6 +25,14 @@ class ArticlesController extends Controller
         return view('article.show', ['articles' => $articles]);
     }
 
+    public function adminIndex(Article $article)
+    {
+        // 管理者の記事一覧を取得
+        $articles = $article->getAdminArticles();
+
+        return view('article.admin.index', ['articles' => $articles]);
+    }
+
     public function committeeIndex(Article $article)
     {
         // 委員会の記事一覧を取得

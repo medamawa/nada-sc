@@ -86,6 +86,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'article'], function () {
         Route::get('/', 'Article\ArticlesController@index')->name('article.index');
         Route::get('/get/{id}', 'Article\ArticlesController@show')->name('article.show');
+        Route::group(['prefix' => 'admin'], function () {
+            Route::get('/', 'Article\ArticlesController@adminIndex')->name('article.admin.index');
+        });
         Route::group(['prefix' => 'committee'], function () {
             Route::get('/', 'Article\ArticlesController@committeeIndex')->name('article.committee.index');
         });

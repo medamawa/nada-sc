@@ -52,6 +52,12 @@ class Article extends Model
         return $this->where('id', $id)->get();
     }
 
+    public function getAdminArticles()
+    {
+        // " role = 0 " は管理者を表している
+        return $this->join('users', 'articles.user_id', '=', 'users.id')->where('users.role', '=', 0)->orderBy('articles.updated_at', 'desc')->get();
+    }
+
     public function getCommitteeArticles()
     {
         // " role = 1 " は委員会を表している
