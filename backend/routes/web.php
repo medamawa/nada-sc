@@ -55,6 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::group(['prefix' => 'committee'], function () {
+        Route::get('/index', 'User\UsersController@committeeIndex')->name('committee.index');
+
         // ミドルウェアで委員会アカウント以外を弾く
         Route::group(['middleware' => 'auth.committee'], function () {
             Route::get('/', function() {
@@ -64,6 +66,8 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::group(['prefix' => 'club'], function () {
+        Route::get('/index', 'User\UsersController@clubIndex')->name('club.index');
+
         // ミドルウェアでクラブアカウント以外を弾く
         Route::group(['middleware' => 'auth.club'], function () {
             Route::get('/', function() {

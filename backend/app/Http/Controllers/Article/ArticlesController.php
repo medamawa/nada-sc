@@ -8,7 +8,6 @@ use App\Http\Models\Article;
 
 class ArticlesController extends Controller
 {
-    
     public function index(Article $article)
     {
         // 記事一覧を取得
