@@ -43,6 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
             // adminのみ新規登録可能
             Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
             Route::post('/register', 'Auth\RegisterController@register');
+
+            Route::get('/user-index', 'User\UsersController@userIndex')->name('admin.user.index');
             
             // draft(下書き)のチェック
             Route::group(['prefix' => 'draft-check'], function () {

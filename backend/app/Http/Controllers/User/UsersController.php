@@ -8,6 +8,14 @@ use App\Http\Models\User;
 
 class UsersController extends Controller
 {
+    public function userIndex(User $user)
+    {
+        // ユーザーの一覧を取得
+        $users = $user->getAllUsers();
+        
+        return view('user.index', ['users' => $users]);
+    }
+
     public function committeeIndex(User $user)
     {
         // 委員会の一覧を取得

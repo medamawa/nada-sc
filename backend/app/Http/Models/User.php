@@ -26,6 +26,11 @@ class User extends Authenticatable
         return $this->where('id', '=', $user_id)->value('email');
     }
 
+    public function getAllUsers()
+    {
+        return $this->get();
+    }
+
     public function getCommitteeUsers()
     {
         return $this->where('role', '=', '1')->get();
