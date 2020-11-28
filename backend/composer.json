@@ -41,10 +41,12 @@
         ],
         "exclude-from-classmap": [
             "vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\AuthenticatesUsers.php",
+            "vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\RegistersUsers.php",
             "vendor\\laravel\\framework\\src\\Illuminate\\Auth\\EloquentUserProvider.php"
         ],
         "files": [
             "app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\AuthenticatesUsers.php",
+            "app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\RegistersUsers.php",
             "app\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\EloquentUserProvider.php"
         ]
     },
