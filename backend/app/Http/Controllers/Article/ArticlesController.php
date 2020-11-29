@@ -14,7 +14,8 @@ class ArticlesController extends Controller
         // 記事一覧を取得
         $articles = $article->getArticles();
         
-        return view('article.index', ['articles' => $articles]);
+				//return view('article.index', ['articles' => $articles]);
+				return response()->json(['articles' -> $articles]);
     }
 
     public function show($id, Article $article)
@@ -22,7 +23,8 @@ class ArticlesController extends Controller
         // idから記事を取得
         $articles = $article->getArticleWithId($id);
 
-        return view('article.show', ['articles' => $articles]);
+        //return view('article.show', ['articles' => $articles]);
+				return response()->json(['articles' -> $articles]);
     }
 
     public function committeeIndex(Article $article)
@@ -30,7 +32,8 @@ class ArticlesController extends Controller
         // 委員会の記事一覧を取得
         $articles = $article->getCommitteeArticles();
 
-        return view('article.committee.index', ['articles' => $articles]);
+        //return view('article.committee.index', ['articles' => $articles]);
+				return response()->json(['articles' -> $articles]);
     }
 
     public function clubIndex(Article $article)
@@ -38,7 +41,8 @@ class ArticlesController extends Controller
         // クラブの記事一覧を取得
         $articles = $article->getClubArticles();
 
-        return view('article.club.index', ['articles' => $articles]);
+        //return view('article.club.index', ['articles' => $articles]);
+				return response()->json(['articles' -> $articles]);
     }
 
     public function personalIndex(Article $article)
@@ -46,6 +50,7 @@ class ArticlesController extends Controller
         // クラブの記事一覧を取得
         $articles = $article->getPersonalArticles();
 
-        return view('article.personal.index', ['articles' => $articles]);
+        //return view('article.personal.index', ['articles' => $articles]);
+				return response()->json(['articles' -> $articles]);
     }
 }

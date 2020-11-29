@@ -1,0 +1,33 @@
+/* 大枠の装飾の設定 */
+
+body {
+    background-color: #f6f6f4;
+}
+
+#body-header {
+    background-color: #f6f6f4;
+}
+
+#contents-wrapper {
+    padding: 16px 10px;
+    margin-bottom: 60px;
+}
+
+main {
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.wrapper-h1 {
+    font-size: 1rem;
+    /*線の種類（実線） 太さ 色*/
+    border-bottom: solid 1px #224473;
+    margin: 0px 15px 10px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+p {
+    margin: 0;
+}

@@ -1,0 +1,195 @@
+/* メイン記事の装飾の設定 */
+
+.main-article {
+    padding: 15px 15px;
+    margin: 15px 15px 20px;
+    color: #5d627b;
+    background: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    text-align: left;
+}
+
+.main-article header h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color: #5bbee5;
+    border-bottom: dashed 2px #5bbee5;
+}
+
+.main-article-subinfo {
+    text-align: right;
+}
+
+.main-article-subinfo p {
+    margin: 0;
+    padding: 0;
+    color: #5d627b;
+    text-align: right;
+}
+
+.main-article-subinfo .name {
+    font-weight: bold;
+    margin-top: 0.2em;
+}
+
+.main-article-subinfo .committee::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f508';
+    font-weight: 600;
+    margin: 0px 4px;
+}
+
+.main-article-subinfo p time {
+    color: #5d627b;
+}
+
+.main-article-summary p {
+    position: relative;
+    border-top: solid 2px #5bbee5;
+    border-bottom: solid 2px #5bbee5;
+    background: #f6f6f4;
+    line-height: 1.4;
+    padding: 0.4em 0.5em;
+    margin: 18px 0 12px;
+}
+
+.main-article-summary p:after {
+    position: absolute;
+    font-family: "Font Awesome 5 Free", 'Quicksand', 'Avenir', 'Arial', sans-serif;
+    font-weight: 900;
+    content: '\f08d\ POINT';
+    background: #5bbee5;
+    color: #ffffff;
+    left: 0px;
+    bottom: 100%;
+    border-radius: 5px 5px 0 0;
+    padding: 5px 7px 3px;
+    font-size: 0.7em;
+    line-height: 1;
+    letter-spacing: 0.05em;
+}
+
+.main-article-grad-wrap {
+    position: relative;
+}
+
+.main-article-grad-btn-wrapper {
+    text-align: center;
+}
+
+.main-article-grad-btn {
+    position: static;
+    bottom: 0;
+    width: 130px;
+    padding: .5em 0;
+    border-radius: 6px;
+    background: #5bbee5;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s ease;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-article-grad-btn-wrapper label {
+    margin-bottom: 0px;
+}
+
+.main-article-grad-btn::after {
+    content: "続きを読む"
+}
+
+.main-article-grad-btn:hover {
+    background: #ffffff;
+    color: #5bbee5;
+}
+
+.main-article-grad-item {
+    position: relative;
+    overflow: hidden;
+    height: 0px;
+}
+
+
+/* .main-article-grad-item p+p {
+    margin-top: 1em;
+} */
+
+.main-article-grad-item::before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 40px;
+    /*グラデーションで隠す範囲*/
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #ffffff 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #ffffff 100%);
+}
+
+.main-article-grad-trigger {
+    display: none;
+}
+
+.main-article-grad-trigger:checked~.main-article-grad-btn-wrapper .main-article-grad-btn {
+    bottom: -2em;
+}
+
+.main-article-grad-trigger:checked~.main-article-grad-btn-wrapper .main-article-grad-btn::after {
+    content: "閉じる"
+}
+
+.main-article-grad-trigger:checked~.main-article-grad-btn-wrapper .main-article-grad-btn .fa {
+    transform: rotate(180deg);
+}
+
+.main-article-grad-trigger:checked~.main-article-grad-item {
+    height: auto;
+}
+
+.main-article-grad-trigger:checked~.main-article-grad-item::before {
+    display: none;
+}
+
+.main-article footer {
+    margin-top: 12px;
+    padding: 0.5em;
+    border-radius: 6px;
+    background: aliceblue;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-article footer a {
+    font-weight: bold;
+    color: #5bbee5;
+}
+
+.main-article footer a:hover {
+    color: #a3daf0;
+}
+
+.main-article footer a[target="_blank"]:not([href^="mailto:"])::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f35d';
+    font-weight: 600;
+    margin: 0px 4px;
+}
+
+.main-article footer a[href^="mailto:"]::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f1d8';
+    font-weight: 600;
+    margin: 0px 4px;
+}
+
+.main-article footer .links::before {
+    content: "リンク：";
+}
+
+.main-article footer .mails::before {
+    content: "メールアドレス：";
+}

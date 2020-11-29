@@ -1,0 +1,68 @@
+/* 3colの画面の設定のテンプレート */
+
+#contents-wrapper {
+    max-width: 1180px;
+}
+
+#contents-wrapper {
+    display: flex;
+    /* 全体を横並びに */
+    flex-wrap: wrap;
+    /* 下に回り込む設定 */
+    justify-content: center;
+    /* flexboxの要素をセンターに寄せる */
+    margin: auto;
+    height: auto;
+}
+
+#left-bar,
+#right-bar {
+    width: 22%;
+    /* サイドバーの横幅を設定 */
+}
+
+#left-bar {
+    text-align: center;
+}
+
+main {
+    width: 56%;
+    /* 100 - サイドバーの横幅 * 2に設定 */
+    text-align: center;
+}
+
+#right-bar {
+    text-align: center;
+}
+
+
+/* 左のバーは残し、右のバーだけ下に潜り込ませる設定 */
+
+@media screen and (max-width: 950px) {
+    #left-bar {
+        width: 25%;
+        /* 左のバーとmainを足して100%になるようにする */
+    }
+    main {
+        width: 75%;
+    }
+    #right-bar {
+        width: 100%;
+        /* 右のバーだけ横幅を100%にする */
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #left-bar {
+        width: 100%;
+        /* height: 300px; */
+        order: 2;
+    }
+    main {
+        width: 100%;
+        order: 1/* orderを指定し、mainを一番上にする */
+    }
+    #right-bar {
+        order: 3;
+    }
+}

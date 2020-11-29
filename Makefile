@@ -1,5 +1,7 @@
 up:
 	docker-compose up -d
+	@make npm-install
+	@make npm-watch
 build:
 	docker-compose build --no-cache --force-rm
 laravel-install:
@@ -23,6 +25,9 @@ init:
 	docker-compose exec app php artisan key:generate
 	docker-compose exec app php artisan storage:link
 	docker-compose exec app php artisan migrate:fresh --seed
+	@make npm-install
+	@make npm-watch
+
 remake:
 	@make destroy
 	@make init

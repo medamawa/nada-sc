@@ -1,6 +1,5 @@
 <template>
 <div class="wrap">
-<form  @submit.prevent="login()">
 	<div>
 		<label for="name">user name</label>
 		<input id="name" name="name" type="text" required v-model="name">
@@ -9,8 +8,8 @@
 		<label for="pass">pass</label>
 		<input id="pass" name="pass" type="password" required v-model="pass">
 	</div>
-	<button type="submit">login</button>
-</form>
+	<button @click="login()">login</button>
+	<button @click="logout()">logout</button>
 </div>
 </template>
 
@@ -28,8 +27,15 @@ export default{
 	methods: {
 		login: function(){
 			axios.post('/login', {
-				user_name: "test",
-				password: "password",
+				user_name: this.name,
+				password: this.pass,
+			})
+			.then(res => {
+				console.log(res);
+			});
+		},
+		logout: function(){
+			axios.post('/logout', {
 			})
 			.then(res => {
 				console.log(res);

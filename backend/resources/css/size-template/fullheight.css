@@ -1,0 +1,5 @@
+/* 画面いっぱいに表示するためのサイズ設定です */
+
+.fullheight {
+    min-height: 100vh !important;
+}

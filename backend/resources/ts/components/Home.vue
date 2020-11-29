@@ -27,6 +27,23 @@
 />
 </div>
 </template>
+<script>
+import axios from "axios"
+
+export default {
+	data() {
+		return {
+			articles: ""
+		}
+	},
+	mounted: function(){
+		axios.get("/article")
+		.then(res => {
+			console.log(res);
+		})
+	}
+}
+</script>
 <style lang="scss">
 @import "../../sass/style.scss";
 </style>
